@@ -1,0 +1,37 @@
+WEB TEKNOLOJİLERİ PROJESİ 
+
+Yusuf Emre CEVİZCİ
+B191210076
+GitHub Linki: https://github.com/YusufCevizci/WEB-PROJE-DEV-2020
+
+Projenin Amacı:
+	- Kendimi ve yaşadığım şehri tanıtan bir web sitesi yapmak.
+
+Proje İçeriği:
+	Ana Sayfa
+		- Diğer sayfalara ulaşılabilecek kısayol tuşları.
+
+	Hakkımda Sayfası
+		- Kişisel bilgiler.
+		- CV.
+		- Özgeçmiş.
+	
+	Özgeçmiş Sayfası
+		- Eğitim bilgileri
+
+	Şehrim Sayfası
+		- Yaşadığım şehrin tanıtım metni.
+		- Şehirde en popüler birkaç yerin fotoğrafının olduğu bir slider.
+
+	Mirasımız Sayfası
+		- Şehrin futbol takımının tanıtımı (Konyaspor).
+
+	Login Sayfası
+		- Kullanıcıdan kullanıcı adı ve şifresinin istenmesi.
+		- Eğer kullanıcı adı ve şifre doğru ise 'Hoşgeldiniz!' mesajı verilir.
+		- Eğer kullanıcı adı veya şifre yanlış ise login sayfasına geri dönülür.
+
+	İletişim Sayfası
+		- Tüm form elemanlarının kullanıldığı, seçim veya veri girişi yapılabilen bir bölüm.
+
+	  
