@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        *{
+            margin:2px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            font-family:"Lucidatypewriter", monospace;
+            background-color: cadetblue;
+        }
+        .logo{
+            color: black;
+            text-transform:uppercase;
+            letter-spacing: 10px;
+            font-size: 20px;
+        }
+        .nav-links{
+            display:flex;
+            background-color:cadetblue;
+            justify-content: space-around;
+            width: 60%;
+        }
+        .nav-links a{
+            color: floralwhite;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .nav-links li{
+            list-style:georgian;
+        }
+        
+        @media screen and(max-width: 1024px) {
+            .nav-links{
+                width: 60%;
+            }
+        }
+        @media screen and(max-width: 768px) {
+            body{
+                overflow-x: hidden;
+            }
+            .nav-links{
+                position:absolute;
+                right:0px;
+                height:90vh;
+                top:8vh;
+                background-color:cadetblue;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+            }
+            .nav-links li {
+                opacity: 0;
+            }
+            .burger{
+                display: block;
+            }
+        }
+        .nav-active {
+            transform:translateX(0%);
+        }
+        .about{
+          background-color: aquamarine;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 8vh;
+          text-align: center;
+
+        }
+        h1{
+            font-size: 2.1rem;
+            line-height: 1.4;
+            letter-spacing: 0.5rem;
+            text-align: center;
+        }
+        .egitim{
+           display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            background-color: cadetblue;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            font-size: 25px;
+           font-family:New Century Schoolbook, serif;
+        }
+        .egitimbaslik{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            background-color: cadetblue;
+        }
+        .sehir{
+            background-color: cadetblue;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+          }
+          
+         
+          .text {
+            color: #f2f2f2;
+            font-size: 25px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+          }
+          
+         
+          .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+          }
+          
+         
+          .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color:cadetblue;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+          
+          .active {
+            background-color: cadetblue;
+          }
+          
+          
+          .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 3s;
+            animation-name: fade;
+            animation-duration: 3s;
+          }
+          
+          @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+          }
+          
+          @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+          }
+       
+          @media only screen and (max-width: 300px) {
+            .text {font-size: 11px}
+          }
+        
+        .login{
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image:url(https://www.saukampus.com/wp-content/uploads/2018/04/Sakarya-%C3%9Cniversitesi-Yeni-Kap%C4%B1.jpg);
+            
+ }
+        .login-page{
+            width: 360px;
+            padding: 10% 0 0;
+            margin:auto;
+        }
+       
+        .form{
+            position: relative;
+            z-index: 1;
+            background: rgba(3,195,252,0.6);
+            max-width: 360px;
+            margin: 0 auto 100px ;
+            padding: 45px;
+            text-align: center;
+        }
+        .form input{
+            font-family: "Lucidatypewriter", monospace;
+            outline: 1;
+            background: #f2f2f2;
+            width :100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+
+        }
+        .form button{
+            font-family: "Lucidatypewriter", monospace;
+            text-transform: uppercase;
+            outline: 0;
+            background: #4CAF50;
+            width:100%;
+            border:0 ;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor:pointer;
+
+        }
+        .form button:hover,.form button:active{
+            background: #43A047;
+        }
+        .form .message{
+            margin: 15px 0 0;
+            color: aliceblue;
+            font-size: 12px;
+
+        }
+        .form .message a{
+            color:#4CAF50 ;
+            text-decoration: none;
+
+        }
+        .form .register-form{
+            display: none;
+
+        }
+        .hak{
+          text-align: center;
+          background-color:cadetblue ;
+        }
+        .miras{
+          height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image:url(https://wallpaperaccess.com/full/2283160.jpg);
+            color: black;
+            text-shadow: white;
+     font-size: 20px;
+padding: 8px 12px;
+bottom: 8px;
+width: 100%;
+text-align: center;
+font-family:Oldtown, fantasy;
+
+        }
+        .forum{
+          background-color: mediumturquoise;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+    <nav>
+        <div class="logo">
+            <h5>Yusuf Cevizci</h5>
+        </div>
+        <ul class="nav-links">
+            <li>
+               <a href="#giris">Anasayfa</a> 
+            </li>
+            <li>
+                <a href="#about">Hakkımda</a> 
+             </li>
+             <li>
+                <a href="#education">Özgeçmiş</a> 
+             </li>
+             <li>
+                <a href="#city">Şehrim</a> 
+             </li>
+             <li>
+                <a href="#heritance">Mirasımız</a> 
+             </li>
+             <li>
+                <a href="#login">Login</a> 
+             </li>
+             <li>
+               <a href="#form">Form</a>
+             </li>
+             <div class="burger">
+                 <div class="line1"></div>
+                 <div class="line2"></div>
+                 <div class="line3"></div>
+             </div>
+        </ul>
+    </nav>
+ 
+  <section id="about" >
+    <div class="container-fluid">
+        <div class="hak">
+                <h4 >HAKKIMDA</h4>
+               <table class="about"  >
+         <tr><td>Adı:</td><td>Yusuf Emre</td></tr>
+    
+        <tr><td>Soyadı:</td><td>Cevizci</td></tr>
+
+                            <tr><td>Doğum Tarihi:</td><td>01.03.2000</td></tr>
+    
+                            <tr><td>Doğum Yeri:</td><td>Konya</td></tr>
+
+                            <tr><td>Eğitim durumu:</td><td>Lisans</td></tr>
+
+                            <tr><td>Bölümü:</td><td> Bilgisayar Mühendisliği</td></tr>
+    
+               </table>
+              </div>
+              
+                    </section>
+                    </div>
+                    </div>
+                    <!---->
+                    <section id="education">
+                    <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                        <div class="col-lg-6">
+                        </div>
+                      <!--- <div class="col-lg-6">
+                        <div class="d-flex h-100">-->
+                              <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="egitimbaslik">ÖZGEÇMİŞ</h4>
+                                <p class="mb-0 text-white-50">
+                                  <div>
+                                  <div class="container">
+                                    <div class="row">
+                                      <div class="col-sm">
+                                        <p>KİŞİSEL BİLGİLER</p>
+                                        <table class="egitim">
+                    
+                                          <tr><td>Ad Soyad:</td><td>Yusuf Emre Cevizci </td></tr>  
+                                          
+                                         <tr><td>E-mail:</td><td>yusuf.cevizci@ogr.sakarya.edu.tr</td></tr>   
+                  
+                                          <tr><td>LinkedIN:</td><td><a href="https://www.linkedin.com/in/yusuf-cevizci-b24ab4195/">LinkedIN Profili</a></td></tr>  
+                  
+                                         <tr><td>Instagram:</td><td><a href="https://www.instagram.com/yusuf.cevizci/">Instagram Profili</a> </td></tr>   
+                  
+                                    </table>
+                                     
+                   
+                                      </div>
+                                      <div class="col-sm">
+                                        <p>EĞİTİM VE ÖĞRETİM</p>
+                                        <table class="egitim">
+                    
+                                          <tr><td>İlkokul:</td><td>Sıraç Aydın Taşbaş İ.Ö.O</td></tr>  
+                                          
+                                         <tr><td>Ortaokul:</td><td>Kazım Özenç Seçen O.O</td></tr>   
+                  
+                                          <tr><td>Lise:</td><td>Erbil Koru A.L</td></tr>  
+                  
+                                         <tr><td>Üniversite:</td><td> Sakarya Üniversitesi</td></tr>   
+                    
+                                          <tr><td>Bölümü:</td><td>Bilgisayar Mühendisliği</td></tr>   
+                  
+                                    </table>
+                                      </div>
+                                      <div class="col-sm">
+                                        <p>BECERİLER</p>
+                                        <table class="egitim">
+                    
+                                          <tr><td>İngilizce:</td><td>A2</td></tr>  
+                                          
+                                         <tr><td>C++:</td><td>Orta Düzey</td></tr>   
+                  
+                                          <tr><td>C#:</td><td>Orta Düzey</td></tr>    
+                  
+                                    </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </p>
+                                <hr class="d-none d-lg-block mb-0 ml-0">
+                              </div>
+                            </div>
+                           
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    </section>
+                      <section id="city">
+                          <div class="sehir">
+                          <h1>KONYA</h1>
+                          <div class="konya"></div>
+                          <div class="slideshow-container">
+
+                            <div class="mySlides fade">
+                              <div class="numbertext">1 / 3</div>
+                              <a href=>   <img src="https://www.birhayalinpesinde.com/wp-content/uploads/2017/01/Konya_Mevlana_turbesi-692x458.jpg" style="width:100%" onclick="window.open('1.htm', '_blank')";>
+                              <div class="text">Konya Mevlana Müzesi</div>
+                            </div>
+                            
+                            <div class="mySlides fade">
+                              <div class="numbertext">2 / 3</div>
+                              <a href=>  <img src="https://www.birhayalinpesinde.com/wp-content/uploads/2018/11/konya_alaaddin_tepesi-2-692x460.jpg" style="width:100%" onclick="window.open('2.htm', '_blank')";>
+                              <div class="text">Konya Alaaddin Tepesi</div>
+                            </div>
+                            
+                            <div class="mySlides fade">
+                              <div class="numbertext">3 / 3</div>
+                              <a href=><img src="https://www.birhayalinpesinde.com/wp-content/uploads/2017/01/Konya_Kelebekler_Vadisi_Ulasim-692x468.png"  style="width:100%" onclick="window.open('3.htm', '_blank')"; >
+                              
+                              <div class="text">Konya Kelebek Vadisi</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="https://www.birhayalinpesinde.com/wp-content/uploads/2017/01/ince_minare_medresesi_konya-692x508.jpg" style="width:100%" onclick="window.open('a.htm', '_blank');">
+                                <div class="text">İnce Minare Müzesi</div>
+                              </div>
+                            </div>
+                            <br>
+                            
+                            <div style="text-align:center">
+                              <span class="dot"></span> 
+                              <span class="dot"></span> 
+                              <span class="dot"></span> 
+                              <span class="dot"></span> 
+                            </div>
+                            
+                            <script>
+                            var slideIndex = 0;
+                            showSlides();
+                            
+                            function showSlides() {
+                              var i;
+                              var slides = document.getElementsByClassName("mySlides");
+                              var dots = document.getElementsByClassName("dot");
+                              for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";  
+                              }
+                              slideIndex++;
+                              if (slideIndex > slides.length) {slideIndex = 1}    
+                              for (i = 0; i < dots.length; i++) {
+                                dots[i].className = dots[i].className.replace(" active", "");
+                              }
+                              slides[slideIndex-1].style.display = "block";  
+                              dots[slideIndex-1].className += " active";
+                              setTimeout(showSlides, 2000); 
+                            }
+                            </script>
+
+                        </div>
+                      </section>
+                      <section id="heritance">
+                        <div class="miras">
+                          <h1>MİRASIMIZ</h1>
+                          <p>1922 yılında Konya'da Gençlerbirliği adıyla kurulmuştur. Konya Ligi şampiyonu olarak Türk futbol tarihindeki 
+                            <br>ilk ülke şampiyonası olan 1924 Türkiye Futbol Şampiyonası'na katılmıştır.1965 yılında profesyonel liglerde<br>
+                             Konya şehrini tek takımın temsil edeceği yönünde federasyondan gelen talimat doğrultusunda Konya Gençlerbirliği;<br>
+                              Meramspor, Selçukspor ve Çimentospor ile birleşerek "Konyaspor" adını almış ve 1. Lig'de profesyonel olarak mücadeleye başlamıştır.<br>
+                               Kulüp 1981 yılına kadar siyah-beyaz renklerde mücadele ederken, 1980-81 sezonu sonunda rakibi Konya İdman Yurdu'yla birleşmiş ve<br>
+                                renkleri de rakibinin renkleri olan yeşil-beyaz olarak belirlenmiştir. (Birleşim tarihi olan 1981 yılı, birleşimden dolayı<br> 
+                                Konyaspor'un kuruluş yılı olarak kararlaştırılsa da, 2016 yılı Eylül ayında yapılan Genel Kurul toplantısı kararı<br>
+                                 ile Konyaspor'un kuruluş yılı 1922 olarak değiştirilmiş ve kulüp armasına da işlenmiştir.)
+                    
+                    
+                            Bu birleşme, o dönemdeki bölünmeyi de engellemiş oldu.<br>
+                             Konyaspor ve Konya İdman Yurdu yöneticilerinden oluşan birleştirme<br>
+                             heyeti 39. gün dönemin sıkı yönetim komutanı Bedrettin Demirel tarafından tutuklanmış ve bu birleştirmeden dolayı ağır<br>
+                              ceza mahkemesinde yargılanmıştır. 1998-2002 yılları arasında sponsoru olan Kombassan Holding'in adını da alarak <br>
+                              Konyaspor ismiyle karşılaşmalara çıkmıştır.
+                            
+                            2009-10 sezonunda 1. Lig'de 6. sırada tamamlayarak 4'lü play off grubuna katılmıştır. Bu grubu lider olarak tamamlayıp <br>
+                            Süper Lig'e yeniden çıkmıştır. Konyaspor 2010-11 Sezonunda Süper Lig'de mücadele etmiştir. Süper Lig'in 21. haftasında<br>
+                             Bucaspor'a deplasmanda 3-2 mağlup olan Konyaspor'da teknik direktör Ziya Doğan istifa etmiş,yerine başka bir deneyimli<br>
+                              teknik direktör olan Yılmaz Vural getirilmiştir. 31. Haftada oynanan Kasımpaşa maçında berabere kalıp Süper Lig'e veda etmiştir
+                              .<br>2011-2012 sezonunda 1. Lig'de yer alan kulüp Play-Off'a kalmış ancak Süper Lig'e çıkamamıştır. Kulüp 2012-13 sezonunda da 1. Lig'de<br>
+                               yer almış ve MKE Ankaragücü'nü 1-0 yenerek Play-Off oynamaya hak kazanmıştır. Play-Off final maçında ise<br>
+                                Manisaspor'u 2-0 yenmiş ve 2013-14 Süper Lig'de oynamaya hak kazanmıştır. 2015-16 sezonunda ligi 3. sırada bitirmiş ve UEFA <br>
+                                Avrupa Ligine katılmaya hak kazanmıştır.
+                            
+                            Kulüp 2016 yılı Nisan ayında Atiker firması arasında 3 yıllık isim sponsorluğu <br> 
+                            sözleşmesi imzalandı.2019 yılında sonlanan sponsorluk anlaşmasının ardından İttifak Holding ile 2019 Eylül<br>
+                             ayında 5 yıllık isim sponsorluğu anlaşması imzalandı.</p>
+                            </div>
+                        
+                    </section>
+                    <section id="login">
+                        <div class="login">
+                        <div class="login-page">
+                            <div class="form">
+                                <form class="register-form">
+                                    <input type="text" placeholder="user name"/>
+                                    <input type="text" placeholder="password"/>
+                                    <input type="text" placeholder="email id"/>
+                                    <button>Oluştur</button>
+                                    <p class="message">Zaten kayıtlı mısınız? <a href="#login">Login</a></p>
+                                </form>
+                                <form class="login-form">
+                                    <input type="text" placeholder="user name">
+                                    <input type="text" placeholder="password">
+                                    <button>login</button>
+                                    <p class="message">Kayıtlı değil misiniz? <a href="#login">Kaydolun</a></p>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                    <script>
+                        $('.message a').click(function(){
+                            $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+                           });
+                    </script>
+                    </section>
+                    <section id="form">
+                      <div class="forum">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-10 col-lg-8 mx-auto text-center">
+                            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                            <h2 class="text-white mb-5">Bana Ulaşın!</h2>
+                           <form name="form" action="" method="post">
+                    <div class="form-group">
+                       <div class="form-row">
+                      <div class="col">
+                        <input type="text" name="ad" class="form-control" required="required" placeholder="Adınız..."><br>
+                        <input type="text" name="soyad" class="form-control" required="required" placeholder="Soyadınız...">
+                      </div>
+                    </div><br>
+                      <input name="telno"  type="number" class="form-control" id="telefon"  required="required" placeholder="Telefon Numaranız..">
+                    </div><br>
+                      <input name="email" type="email" class="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp" placeholder="E-Mail adresinizi giriniz."><br>
+                       <div class="form-group">
+                    </div>
+                    <button name="gonder" class="btn btn-primary" value="gonder" type="submit" class="btn btn-primary">Gönder</button>
+                    <button type="reset" class="btn btn-light" value="Temizle">Temizle</button>
+                  </form>
+                      </div>
+                    </div>
+                      </div>
+                  
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+</div>
+</body>
+</html>
